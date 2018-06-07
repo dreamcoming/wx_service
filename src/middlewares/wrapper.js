@@ -15,10 +15,7 @@ export default () => async (ctx, next) => {
   try {
     const data = await next();
     if (ctx.body === undefined) {
-      ctx.body = {
-        code: 0,
-        data,
-      };
+      ctx.body = data;
     }
 
     const duration = new Date().getTime() - startTime.getTime();
