@@ -3,7 +3,7 @@ import * as wx from '@/controllers/wx';
 // 设置路由
 export default (router) => {
   // 推送事件
-  router.get('/', wx.pushEvent);
+  router.all('/', wx.pushEvent);
 
   // 获取access_token
   router.get('/api/access_token', wx.getAccessToken);
