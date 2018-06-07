@@ -14,9 +14,12 @@ export const pushEvent = async (ctx) => {
     return 'success';
   }
 
-  switch (pushMsg.MsgType) {
+  switch (pushMsg.MsgType[0]) {
     case 'event':
-      console.log('消息类型MsgType:', MsgType);
+      console.log(`这是一个事件消息，事件类型Event: ${pushMsg.Event[0]}，事件Key: ${pushMsg.EventKey[0]}`);
+    break;
+    case 'text':
+      console.log(`这是一个文本消息，消息内容Content: ${pushMsg.Content[0]}`);
     break;
   }
 
