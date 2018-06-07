@@ -12,9 +12,9 @@ setWxRouter(router);
 // router.options('*', () => 'I am alive.');
 
 // 处理404错误
-router.all('*', () => {
-  throw new Error('NOT_FOUND');
-});
+// router.all('*', () => {
+//   throw new Error('NOT_FOUND');
+// });
 
 router.all('*', async (ctx) => {
   try {
