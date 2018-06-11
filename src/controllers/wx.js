@@ -20,12 +20,10 @@ export const pushEvent = async (ctx) => {
     break;
     case 'text':
       console.log(`这是一个文本消息，消息内容Content: ${pushMsg.Content[0]}`);
-    break;
+      return await wxService.welcomeSay(ctx, pushMsg);
   }
 
-  return await wxService.welcomeSay(ctx, pushMsg);
-  
-  // return 'success';
+  return 'success';
 };
 
 // 事件推送数据

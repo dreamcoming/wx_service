@@ -19,7 +19,7 @@ export const getAccessToken = async () => {
 
 // 欢迎语
 export const welcomeSay = async (ctx, msg) => { 
-  const result = jsonToXml({
+  const result = await jsonToXml({
     xml: {
       ToUserName: msg.FromUserName,
       FromUserName: msg.ToUserName,
@@ -27,7 +27,8 @@ export const welcomeSay = async (ctx, msg) => {
       MsgType: msg.MsgType,
       Content: 'welcome to bobby~~'
     }
-  })
+  });
+  
   ctx.res.setHeader('Content-Type', 'application/xml')
   ctx.res.end(result)
 };
