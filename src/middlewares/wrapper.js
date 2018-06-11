@@ -24,7 +24,7 @@ export default () => async (ctx, next) => {
     const message = get(e, 'message');
     const duration = new Date().getTime() - startTime.getTime();
 
-    console.log(`${ctx.method} - ${ctx.url} - ${duration}ms - ${e} - ${errors[message] || message}`);
+    console.log(`[${new Date()}] ${ctx.method} - ${ctx.url} - ${duration}ms - ${e} - ${errors[message] || message}`);
     console.log(e);
 
     if (message === 'NOT_FOUND') {
