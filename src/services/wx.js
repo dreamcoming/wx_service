@@ -18,7 +18,7 @@ export const getAccessToken = async () => {
 };
 
 // 欢迎语
-export const welcomeSay = async (msg) => { 
+export const welcomeSay = async (ctx, msg) => { 
   const result = jsonToXml({
     xml: {
       ToUserName: msg.FromUserName,

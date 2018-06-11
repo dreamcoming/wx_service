@@ -23,7 +23,7 @@ export const pushEvent = async (ctx) => {
     break;
   }
 
-  return await wxService.welcomeSay(pushMsg);
+  return await wxService.welcomeSay(ctx, pushMsg);
   
   // return 'success';
 };
